@@ -9,7 +9,7 @@ cask "claudebat" do
 
   depends_on macos: ">= :sonoma"
 
-  app "ClaudeBat.app"
+  app "ClaudeBat.app", no_quarantine: true
 
   zap trash: [
     "~/Library/Preferences/com.diamondkj.claudebat.plist",
