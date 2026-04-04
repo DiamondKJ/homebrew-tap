@@ -1,6 +1,6 @@
 cask "claudebat" do
-  version "1.0.4"
-  sha256 "271d4c13f46f1e50d520cd381615bf5cb2a80bdede38050989b9c6ee96335e13"
+  version "1.0.5"
+  sha256 "9d8562e5df97143ec7a9064dc3b6fcba1add65485bd29a874ab3f41e95a47dcd"
 
   url "https://github.com/DiamondKJ/ClaudeBat/releases/download/v#{version}/ClaudeBat-#{version}.dmg"
   name "ClaudeBat"
@@ -9,7 +9,13 @@ cask "claudebat" do
 
   depends_on macos: ">= :sonoma"
 
-  app "ClaudeBat.app", no_quarantine: true
+  app "ClaudeBat.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/ClaudeBat.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Preferences/com.diamondkj.claudebat.plist",
