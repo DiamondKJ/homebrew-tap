@@ -1,6 +1,6 @@
 cask "claudebat" do
-  version "1.0.10"
-  sha256 "e9e371b7b00a31008731dab0190fa6afd62d5bfc9d43ee4cc942844658a01bc0"
+  version "1.0.11"
+  sha256 "fc2dbe5e30eef23e8a89fc7b305f39cff04fb1095893226eaf49172089a69e76"
 
   url "https://github.com/DiamondKJ/ClaudeBat/releases/download/v#{version}/ClaudeBat-#{version}.dmg"
   name "ClaudeBat"
